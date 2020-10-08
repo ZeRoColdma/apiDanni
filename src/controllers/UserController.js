@@ -1,19 +1,28 @@
 const User = require('../models/User');
 
 module.exports = {
-  async store(req, res) {
-    const { email, password } = req.body;
+  async store(request, response) {
+    const { email, senha, nivel } = request.body;
 
-    const user = await User.create({ email, password });
+    let user = await User.findOne({ email });
 
-    return res.json(user);
+    if (user) {
+      return response.status(401).json({ erro: 'Usuario existente' });
+    }
+
+    let data = await User.create({
+      email,
+      senha,
+      nivel,
+    });
+
+    return response.json(data);
   },
 
-  async login(req, res) {
-    const { email, password } = req.body;
+  async login(request, response) {
+    const { email, senha } = request.body;
+    const userValidate = await User.findOne({ email, senha });
 
-    const userValidate = await User.findOne({ email, password });
-
-    return res.json(userValidate);
+    return response.json(userValidate);
   },
 };

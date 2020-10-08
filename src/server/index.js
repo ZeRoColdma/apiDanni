@@ -4,9 +4,7 @@ require('../../.env');
 mongoose.connect(DATABASE, {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useFindAndModify: true,
+  useUnifiedTopology: true,
 });
-
-mongoose.Promise = global.Promise;
 
 module.exports = mongoose;
