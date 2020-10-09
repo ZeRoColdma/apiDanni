@@ -15,10 +15,10 @@ const UserSchema = mongoose.Schema(
       type: String,
       require: true,
     },
-    produtos: [
+    data: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Product',
+        ref: 'product',
       },
     ],
   },

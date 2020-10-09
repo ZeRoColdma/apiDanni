@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
 const ProdutosSchema = mongoose.Schema(
   {
     produto: {
-      type: String,
+      type: [String],
       require: true,
     },
     quantidade: {
@@ -15,8 +14,11 @@ const ProdutosSchema = mongoose.Schema(
       type: Boolean,
       require: true,
     },
-    owner: {
-      type: Schema.Types.ObjectId,
+    cliente: {
+      type: String,
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
   },

@@ -1,6 +1,8 @@
 const User = require('../models/User');
 
 module.exports = {
+  async index(request, response) {},
+
   async store(request, response) {
     const { email, senha, nivel } = request.body;
 
@@ -16,6 +18,6 @@ module.exports = {
       nivel,
     });
 
-    return response.json(data);
+    return response.json({ email, nivel });
   },
 };
