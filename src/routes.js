@@ -2,13 +2,15 @@ const expess = require('express');
 const routes = expess.Router();
 
 const UserController = require('./controllers/UserController');
+const SessionController = require('./controllers/SessionController');
 
 //!Rotas de Sessão
 routes.post('/cadastro', UserController.store);
-routes.post('/login', UserController.login);
+routes.post('/login', SessionController.login);
 
-routes.get('/index', (req, res) => {
-  return res.send('Funcionando');
+//!Rotas Produtos
+routes.post('/products', (req, res) => {
+  return res.json({ ok: true });
 });
 
 module.exports = routes;

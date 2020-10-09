@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const UserSchema = mongoose.Schema(
   {
@@ -14,6 +15,12 @@ const UserSchema = mongoose.Schema(
       type: String,
       require: true,
     },
+    produtos: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Product',
+      },
+    ],
   },
   { timestamps: true },
 );

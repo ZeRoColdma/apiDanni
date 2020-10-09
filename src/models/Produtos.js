@@ -1,18 +1,23 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const ProdutosSchema = mongoose.Schema(
   {
-    email: {
+    produto: {
       type: String,
       require: true,
     },
-    senha: {
-      type: String,
+    quantidade: {
+      type: Number,
       require: true,
     },
-    nivel: {
-      type: String,
+    promocao: {
+      type: Boolean,
       require: true,
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
     },
   },
   { timestamps: true },
