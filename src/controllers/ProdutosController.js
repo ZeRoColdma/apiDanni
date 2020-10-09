@@ -17,4 +17,6 @@ module.exports = {
 
     return response.json(data);
   },
+
+  async delete(request, response) {},
 };
