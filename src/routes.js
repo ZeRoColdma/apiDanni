@@ -7,8 +7,6 @@ const UserController = require('./controllers/UserController');
 routes.post('/cadastro', UserController.store);
 routes.post('/login', UserController.login);
 
-routes.get('/index', (req, res) => {
-  return res.send('Funcionando');
-});
+
 
 module.exports = routes;
