@@ -7,20 +7,10 @@ const UserSchema = mongoose.Schema(
       type: String,
       require: true,
     },
-    senha: {
+    password: {
       type: String,
       require: true,
     },
-    nivel: {
-      type: String,
-      require: true,
-    },
-    data: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'product',
-      },
-    ],
   },
   { timestamps: true },
 );

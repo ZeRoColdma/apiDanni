@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ProdutosSchema = mongoose.Schema(
   {
-    produto: {
+    vendas: {
       type: [String],
       require: true,
     },
@@ -21,6 +21,12 @@ const ProdutosSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
+    dataEstoque: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'product',
+      },
+    ],
   },
   { timestamps: true },
 );

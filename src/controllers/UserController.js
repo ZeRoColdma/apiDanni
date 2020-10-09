@@ -4,7 +4,7 @@ module.exports = {
   async index(request, response) {},
 
   async store(request, response) {
-    const { email, senha, nivel } = request.body;
+    const { email, password } = request.body;
 
     let user = await User.findOne({ email });
 
@@ -14,10 +14,9 @@ module.exports = {
 
     let data = await User.create({
       email,
-      senha,
-      nivel,
+      password,
     });
 
-    return response.json({ email, nivel });
+    return response.json({ email });
   },
 };
