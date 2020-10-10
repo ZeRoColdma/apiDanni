@@ -24,7 +24,7 @@ const ProdutosSchema = mongoose.Schema(
     dataEstoque: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'product',
+        ref: 'User',
       },
     ],
   },
