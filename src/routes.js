@@ -16,5 +16,6 @@ routes.post('/login', SessionController.login);
 
 //!Rotas Produtos
 routes.post('/products', ProdutosController.store);
+routes.get('/products', ProdutosController.index);
 
 module.exports = routes;
