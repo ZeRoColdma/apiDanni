@@ -1,11 +1,8 @@
 const Produtos = require('../models/Produtos');
-const Users = require('../models/User');
 
 module.exports = {
   async index(request, response) {
-    const estoqueUser = await Users.find();
-
-    console.log(estoqueUser);
+    const estoqueUser = await Produtos.find();
 
     return response.status(200).send(estoqueUser);
   },
